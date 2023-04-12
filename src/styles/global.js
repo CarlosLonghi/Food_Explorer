@@ -5,7 +5,12 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Slab', serif;
+
+    font-family: 'Poppins', sans-serif;
+
+    /* Será usado na descrição dos cards
+     font-family: 'Roboto', sans-serif; 
+    */
     
     font-size: 62.5%;
   }
