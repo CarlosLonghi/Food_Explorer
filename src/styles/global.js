@@ -16,7 +16,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
   border-style, input, button, textarea {
-    font-size: 16px;
+    font-size: 1.6rem;
     outline: none;
   }
   a {
