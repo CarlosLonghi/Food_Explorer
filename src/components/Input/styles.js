@@ -5,29 +5,28 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 3rem;
 
-  background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
-  color: ${({theme}) => theme.COLORS.GRAY_300};  
+  background-color: ${({theme}) => theme.COLORS.DARK_300};
   
-  border-radius: 10px;
+  border-radius: 5px;
 
   > input {
-    height: 56px;
+    height: 4.8rem;
     width: 100%;
 
-    padding: 16px;
+    padding: 1.2rem 1.4rem;
 
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
     background: transparent;
     border: 0;
 
     &::placeholder {
-      color: ${({ theme }) => theme.COLORS.GRAY_300};
+      color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
   }
 
   > svg {
-    margin-left: 16px;
+    margin-left: 1.6rem;
   }
 `

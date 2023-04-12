@@ -2,46 +2,47 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
+  width: 100vw;
+
+  background-color: ${({theme}) => theme.COLORS.DARK_700};
+  
   display: flex;
-  align-items: stretch;
+  flex-direction: row;
+  justify-content: space-around;
 `
 
 export const Form = styled.form`
-  padding: 0 130px;
 
-  display: flex;
+display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-self: center;
+  padding: 6rem;
+  width: 50rem;
 
-  > header {
-    h1 {
-      font-size: 48px;
-      color: ${({ theme }) => theme.COLORS.WINE};
-      text-shadow: 1px 0px 18px ${({ theme }) => theme.COLORS.BACKGROUND_900};
-    }
+  background-color: ${({theme}) => theme.COLORS.DARK_400};
+  border-radius: 1.6rem;
 
-    h2 {
-      font-size: 24px;
-
-      margin: 48px 0;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 14px;
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
-    }
+  h2 {
+    text-align: center;
+    font-size: 3.2rem;
+    line-height: 4.5rem;
+    font-weight: 500;
+    
+    color: ${({theme}) => theme.COLORS.LIGHT_100};
+    text-shadow: 1px 0px 18px ${({ theme }) => theme.COLORS.DARK_900};
+    margin-bottom: 3rem;
   }
-
+  
   > div {
-    :nth-child(3) {
-      margin-bottom: 24px;
-    }
+    background-color: ${({theme}) => theme.COLORS.DARK_200};
   }
-
+    
   > Button {
-    margin: 20px 0 40px;
+    margin-bottom: 3.2rem;
   }
 
+  a {
+    align-self: center;
+  }
 `

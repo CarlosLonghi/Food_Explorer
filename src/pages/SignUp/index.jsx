@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
-import { Logo } from '../../components/Logo';
+import { Logo } from '../../components/Logo'
+import { Label } from '../../components/Label'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText';
@@ -49,51 +50,54 @@ export function SignUp() {
   return (
     <Container>
       <Logo/>
+
       <Form>
-        <header>
-          <h1>Popcorn Polls</h1>
-          <p>Aplicação para acompanhar e avaliar seus filmes preferidos.</p>
-
-          <h2>Crie sua conta</h2>
-        </header>
-
+        <h2>Crie sua conta</h2>
+        <Label for='name' text='Nome'/>
         <Input
-          placeholder='Nome'
+          id='name'
+          placeholder='Exemplo: Maria da Silva'
           type='text'
           icon={FiUser}
           onChange={event => setName(event.target.value)}
         />
+
+        <Label for='email' text='Email'/>
         <Input
-          placeholder='E-mail'
+          id='email'
+          placeholder='Exemplo: exemplo@exemplo.com.br'
           type='text'
           icon={FiMail}
           onChange={event => setEmail(event.target.value)}
         />
 
+        <Label for='password' text='Senha'/>
         <Input
-          placeholder='Senha'
+          id='password'
+          placeholder='No mínimo 6 dígitos'
           type='password'
           icon={FiLock}
           onChange={event => setPassword(event.target.value)}
         />
+        <Label for='confirm' text='Confirmar Senha'/>
         <Input
-          placeholder='Confirmar Senha'
+          id='confirm'
+          placeholder='No mínimo 6 dígitos'
           type='password'
           icon={FiLock}
           onChange={event => setPasswordConfirm(event.target.value)}
         />
 
         <Button 
-          title='Cadastrar'
+          title='Criar conta'
           onClick={handleSignUp}
         />
 
         <ButtonText 
-          title='Voltar para o login'
+          title='Já tenho uma conta'
           icon={FiArrowLeft}
           to={-1}
         />
-
       </Form>
       
     </Container>
