@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { FiMail, FiLock, FiUserPlus} from 'react-icons/fi'
+import { FiUserPlus} from 'react-icons/fi'
 
 import { useAuth } from '../../hooks/auth'
 
 import { Logo } from '../../components/Logo'
+import { Label } from '../../components/Label'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText'
@@ -25,17 +26,20 @@ export function SignIn() {
       <Logo/>
         
       <Form>
-
+        <h2>Faça login</h2>
+        <Label for='email' text='Email'/>
         <Input
-          placeholder='E-mail'
+          id='email'
+          placeholder='Exemplo: exemplo@exemplo.com.br'
           type='text'
-          icon={FiMail}
           onChange={event => setEmail(event.target.value)}
         />
+
+        <Label for='password' text='Senha'/>
         <Input
-          placeholder='Senha'
+          id='password'
+          placeholder='No mínimo 6 caracteres'
           type='password'
-          icon={FiLock}
           onChange={event => setPassword(event.target.value)}
         />
 
@@ -45,7 +49,7 @@ export function SignIn() {
         />
 
         <ButtonText 
-          title='Criar conta'
+          title='Criar uma conta'
           icon={FiUserPlus}
           to='/register'
         />

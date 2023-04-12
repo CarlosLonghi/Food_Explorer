@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  width: 100%;
   
   display: flex;
   justify-content: center;
