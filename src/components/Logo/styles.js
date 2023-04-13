@@ -5,11 +5,13 @@ export const Container = styled.div`
   
   display: flex;
   justify-content: center;
+  align-items: center;
   align-self: center;
   gap: 2rem;
 
   h1 {
     font-size: 4.2rem;
     line-height: 4.9rem;
+    white-space: nowrap;
   }  
 `

@@ -3,8 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   height: 100vh;
   width: 100vw;
-
-  background-color: ${({theme}) => theme.COLORS.DARK_700};
   
   display: flex;
   flex-direction: row;
@@ -12,8 +10,7 @@ export const Container = styled.div`
 `
 
 export const Form = styled.form`
-
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-self: center;

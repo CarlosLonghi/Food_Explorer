@@ -3,9 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   height: 100vh;
   width: 100vw;
-
-  background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
+  
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -16,7 +14,7 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  padding: 6.4rem;
+  padding: 6rem;
   width: 50rem;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_400};

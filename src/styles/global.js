@@ -15,7 +15,7 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
   body {
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    background-color: ${({ theme }) => theme.COLORS.DARK_700};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     
     -webkit-font-smoothing: antialiased;
