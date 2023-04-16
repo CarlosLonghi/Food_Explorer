@@ -15,6 +15,7 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
   body {
+    overflow-x: hidden;
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     
@@ -27,6 +28,9 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
   }
+  span, strong {
+  font-family: 'Roboto', sans-serif;
+ }
   button, a {
     cursor: pointer;
     transition: all 0.2s ease;
@@ -37,6 +41,5 @@ export default createGlobalStyle`
     opacity: 1;
     filter: brightness(1.1);
     color: ${({theme}) => theme.COLORS.WHITE};
-    
   }
 `
