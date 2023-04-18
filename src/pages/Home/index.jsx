@@ -13,6 +13,7 @@ import CardImage from '../../assets/salada-ravanello.png'
 export function Home(){
   const cards = [
     {
+      id: '1',
       image: CardImage,
       title: 'Salada Ravanello',
       description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
@@ -20,30 +21,27 @@ export function Home(){
     },
 
     {
+      id: '2',
       image: CardImage,
       title: 'Salada Ravanello',
       description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
       price: 'R$ 49,97'
     },
     {
+      id: '3',
       image: CardImage,
       title: 'Salada Ravanello',
       description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
       price: 'R$ 49,97'
     },
-    // {
-    //   image: CardImage,
-    //   title: 'Salada Ravanello',
-    //   description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-    //   price: 'R$ 49,97'
-    // },
-    // {
-    //   image: CardImage,
-    //   title: 'Salada Ravanello',
-    //   description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-    //   price: 'R$ 49,97'
-    // },
-    
+    {
+      id: '4',
+      image: CardImage,
+      title: 'Salada Ravanello',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97'
+    }
+
   ]
 
   return(

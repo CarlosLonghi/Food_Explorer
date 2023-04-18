@@ -1,6 +1,6 @@
-import { Container, Details, Price, Controls, Control } from "./styles";
+import { Container, FavButton, Content, Controls, Control } from "./styles";
 
-import { BiMinus, BiPlus } from 'react-icons/bi'
+import { BiMinus, BiPlus, BiHeart } from 'react-icons/bi'
 
 import { ButtonText } from '../ButtonText'
 import { Button } from '../Button'
@@ -8,13 +8,16 @@ import { Button } from '../Button'
 export function Card ({ image, title, description, price }) {
   return (
     <Container>
-      <Details>
+      <FavButton>
+        <BiHeart/>
+      </FavButton>
+
+      <Content>
         <img src={image} alt={title} />
         <h3>{title}</h3>
         <span>{description}</span>
-      </Details>
-
-      <Price>{price}</Price>
+        <h2>{price}</h2>
+      </Content>
 
       <Controls>
         <Control>

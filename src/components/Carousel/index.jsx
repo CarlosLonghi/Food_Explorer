@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
 import { Card } from '../Card'
-import { Container, CarouselCards, CarouselCard, CarouselButtons, PrevButton, NextButton} from './styles'
+import { Container, CarouselCards, CarouselCard, CarouselButtons, PrevButton, NextButton } from './styles'
 
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { FiChevronRight } from 'react-icons/fi'
+
+import { ButtonText } from '../ButtonText'
 
 export function Carousel({ section, cards }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,16 +18,15 @@ export function Carousel({ section, cards }) {
     setActiveIndex((activeIndex + 1) % cards.length);
   };
 
-
   return (
     <Container>
       <h2>{section}</h2>
       <CarouselCards>
         {cards.map((card, index) => (
           <CarouselCard
-            key={card.title}
+            key={card.id}
             className={index === activeIndex ? 'active' : ''}
-          >
+            >
             <Card 
               image={card.image} 
               title={card.title} 
@@ -38,19 +39,22 @@ export function Carousel({ section, cards }) {
 
       <CarouselButtons>
 
-        <PrevButton 
-          className='prev-button' 
-          onClick={handlePrevClick}
-        >
-          <FiChevronLeft/> 
+        <PrevButton>
+          <button
+            onClick={handlePrevClick}
+          >
+            <FiChevronRight/>
+          </button>
         </PrevButton>
 
-        <NextButton 
-          className='next-button' 
-          onClick={handleNextClick}
-        > 
-          <FiChevronRight/> 
+        <NextButton>
+          <button
+            onClick={handleNextClick}
+          >
+            <FiChevronRight/>
+          </button>
         </NextButton>
+
       </CarouselButtons>
 
     </Container>
