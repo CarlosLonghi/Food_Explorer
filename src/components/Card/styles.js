@@ -6,21 +6,27 @@ export const Container = styled.div`
   background-color: ${({theme}) => theme.COLORS.DARK_900};
   border: 0.1rem solid #000204;
   border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 `
 export const FavButton = styled.button`
   background: transparent;
   border: none;
   font-size: 3rem;
+  margin: 1.6rem 1.6rem 0 0;
   width: fit-content;
+  position: absolute;
+  z-index: 50;
   
   display: flex;
-  color: ${({theme}) => theme.COLORS.LIGHT_300};
+  align-items: center;
+  color: ${({theme}) => theme.COLORS.LIGHT_200};
 
   transition: all 0.1s ease;
-
-  :active {
+  :hover {
     color: red;
-    scale: 1.4;
+    scale: 1.1;
   }
 `
 
@@ -30,6 +36,7 @@ export const Content= styled(Link)`
   align-items: center;
   text-align: center;
   gap: 1.5rem;
+  padding: 0 2rem;
   
   img {
     margin-top: 2.4rem;
@@ -62,7 +69,9 @@ export const Controls = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 30rem;
   margin-top: 1.5rem;
+  margin-bottom: 4rem;
 
   strong {
     font-size: 2rem;
@@ -70,6 +79,10 @@ export const Controls = styled.div`
   }
   button {
     width: fit-content;
+    transition: all 0.1s ease;
+    :active{
+      scale: 1.05;
+    }
   }
 `
 
