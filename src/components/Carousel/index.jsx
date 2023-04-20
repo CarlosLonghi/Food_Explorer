@@ -5,8 +5,6 @@ import { Container, CarouselCards, CarouselCard, CarouselButtons, PrevButton, Ne
 
 import { FiChevronRight } from 'react-icons/fi'
 
-import { ButtonText } from '../ButtonText'
-
 export function Carousel({ section, cards }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
