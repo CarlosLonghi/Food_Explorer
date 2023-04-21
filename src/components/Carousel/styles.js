@@ -19,7 +19,7 @@ export const CarouselCards = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;
-  gap: 3.7rem;
+
   position: absolute;
   width: 100%;
   top: 10rem;
