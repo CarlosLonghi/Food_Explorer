@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  width: 30rem;
+  width: 35rem;
   margin: 0 auto;
   background-color: ${({theme}) => theme.COLORS.DARK_900};
   border: 0.1rem solid #000204;
@@ -27,7 +27,7 @@ export const FavButton = styled.button`
   transition: all 0.1s ease;
   :hover {
     color: red;
-    scale: 1.1;
+    scale: 1.2;
   }
 `
 
@@ -70,7 +70,7 @@ export const Controls = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30rem;
+  width: 100%;
   margin-top: 1.5rem;
   margin-bottom: 4rem;
 
