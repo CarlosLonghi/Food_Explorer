@@ -17,9 +17,6 @@ export const Container = styled.div`
 export const CarouselCards = styled.div`
   z-index: 20;
   overflow: hidden;
-  display: flex;
-  justify-content: space-evenly;
-
   position: absolute;
   width: 100%;
   top: 10rem;
