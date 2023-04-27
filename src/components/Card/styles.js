@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   width: 30rem;
+  margin: 0 auto;
   background-color: ${({theme}) => theme.COLORS.DARK_900};
   border: 0.1rem solid #000204;
   border-radius: 0.8rem;

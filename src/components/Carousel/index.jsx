@@ -1,54 +1,89 @@
-import { useState, useRef, useEffect } from 'react';
-import { Card } from '../Card';
-import { Container, CarouselCards, CarouselCard, CarouselButtons, PrevButton, NextButton } from './styles';
-import { FiChevronRight } from 'react-icons/fi';
+import React, { useState } from "react"
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import "./styles"
 
-export function Carousel({ section, cards }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const carouselRef = useRef(null);
-  const wrapperRef = useRef(null);
+import { Card } from '../Card'
+import { Container, NavigationWrapper } from './styles'
 
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    const activeCard = wrapper.children[activeIndex];
-    const offset = carouselRef.current.offsetWidth / 2 - activeCard.offsetWidth / 2 - activeCard.offsetLeft;
-    wrapper.style.transform = `translateX(${offset}px)`;
-  }, [activeIndex]);
-
-  function handlePrevClick() {
-    setActiveIndex((activeIndex - 1 + cards.length) % cards.length);
-  }
-
-  function handleNextClick() {
-    setActiveIndex((activeIndex + 1) % cards.length);
-  }
+export function Carousel ({section, cards}) {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [loaded, setLoaded] = useState(false)
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: true,
+    mode: "free-snap",
+    slides: {
+      perView: 4,
+      spacing: 20,
+    },
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
+      setLoaded(true)
+    },
+  })
 
   return (
     <Container>
       <h2>{section}</h2>
-      <CarouselCards ref={carouselRef}>
-        <div ref={wrapperRef} style={{ display: 'flex' }}>
-          {cards.map((card, index) => (
-            <CarouselCard key={card.id} className={index === activeIndex ? 'active' : ''}>
-              <Card image={card.image} title={card.title} description={card.description} price={card.price} />
-            </CarouselCard>
-          ))}
+      <NavigationWrapper>
+        <div ref={sliderRef} className="keen-slider">
+
+        {cards.map((card, index) => (
+          <div key={index} className="keen-slider__slide">
+            <Card
+              image={card.image}
+              title={card.title}
+              description={card.description}
+              price={card.price}
+            />
+          </div>
+        ))}
+
+
         </div>
-      </CarouselCards>
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow
+              left
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
 
-      <CarouselButtons>
-        <PrevButton>
-          <button onClick={handlePrevClick}>
-            <FiChevronRight />
-          </button>
-        </PrevButton>
+            <Arrow
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+            />
+          </>
+        )}
+      </NavigationWrapper>
 
-        <NextButton>
-          <button onClick={handleNextClick}>
-            <FiChevronRight />
-          </button>
-        </NextButton>
-      </CarouselButtons>
     </Container>
-  );
+  )
+}
+
+function Arrow(props) {
+ 
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? "arrow--left" : "arrow--right"
+      }`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  )
 }
