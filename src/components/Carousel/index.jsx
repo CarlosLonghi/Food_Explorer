@@ -4,21 +4,28 @@ import "keen-slider/keen-slider.min.css"
 import "./styles"
 
 import { Card } from '../Card'
-import { Container, NavigationWrapper } from './styles'
+import { Container, NavigationWrapper, PrevButton, NextButton } from './styles'
 
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 export function Carousel ({section, cards}) {
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
-    loop: true,
+    loop: false,
     mode: "free-snap",
-    slides: {
-      perView: 3,
-    },
     initial: 0,
+
     created() {
       setLoaded(true)
+    },
+    
+    breakpoints: {
+      "(min-width: 1000px)": {
+        slides: { perView: 1 },
+      },
+      "(min-width: 1620px)": {
+        slides: { perView: 3 },
+      },
     },
   })
 
@@ -41,26 +48,24 @@ export function Carousel ({section, cards}) {
 
         </div>
         {loaded && instanceRef.current && (
-          <>
+          <div className="controls">
+            <PrevButton>
             <Arrow
               left
               onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.prev()
               }
-            >
-              <BsChevronLeft />
-            </Arrow>
+            />
+            </PrevButton>          
 
-            <Arrow
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
-            >
-              <BsChevronRight />
-            </Arrow>
-
-          </>
-
+            <NextButton>
+              <Arrow
+                onClick={(e) =>
+                  e.stopPropagation() || instanceRef.current?.next()
+                }
+              />
+            </NextButton>
+          </div>
         )}
       </NavigationWrapper>
 

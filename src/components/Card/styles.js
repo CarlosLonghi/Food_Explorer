@@ -10,6 +10,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
+  padding: 0 3rem;
 `
 export const FavButton = styled.button`
   background: transparent;
@@ -37,7 +38,6 @@ export const Content= styled(Link)`
   align-items: center;
   text-align: center;
   gap: 1.5rem;
-  padding: 0 2rem;
   
   img {
     margin-top: 2.4rem;
@@ -55,7 +55,7 @@ export const Content= styled(Link)`
   }
 
   span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: ${({theme}) => theme.COLORS.LIGHT_400};
   }
 
