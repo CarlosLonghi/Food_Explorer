@@ -8,7 +8,6 @@ import { api } from '../../services/api';
 import { Container, Wrapper, Search } from "./styles";
 
 import { Logo } from '../Logo'
-import { Input } from '../Input'
 import { Button } from '../Button'
 import { ButtonText } from '../ButtonText'
 

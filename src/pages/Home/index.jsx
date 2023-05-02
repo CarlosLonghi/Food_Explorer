@@ -5,6 +5,7 @@ import { Container, Content, Head } from './styles';
 
 import { Header } from '../../components/Header'
 import { Carousel } from '../../components/Carousel'
+import { Footer } from '../../components/Footer';
 
 import HeadImage from '../../assets/mask-group.png'
 
@@ -64,7 +65,8 @@ export function Home(){
         <Carousel section='Refeições' cards={cards}/>
 
       </Content>
-      
+
+      <Footer/>
     </Container>
   )
 }
