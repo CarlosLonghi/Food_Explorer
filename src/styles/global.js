@@ -6,8 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Poppins', sans-serif;
-    
+    font-family: 'Poppins', sans-serif;    
     font-size: 62.5%;
   }
   body {
@@ -26,10 +25,14 @@ export default createGlobalStyle`
   span, strong {
   font-family: 'Roboto', sans-serif;
  }
+  p {
+    font-size: 2.4rem;
+    font-weight: 400;
+  }
   button, a {
     cursor: pointer;
     transition: all 0.2s ease;
-    filter: brightness(1);
+    filter: brightness(0.9);
   }
   button:hover, a:hover {
     filter: brightness(1.1);
