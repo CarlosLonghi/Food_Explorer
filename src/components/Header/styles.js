@@ -9,7 +9,7 @@ export const Container = styled.header`
 
   display: flex;
   align-items: center;
-
+  
   button {
     height: 5.6rem;
     width: fit-content;
@@ -24,6 +24,8 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 2.8rem 12rem;
+
+  justify-content: space-between;
 
   > div :nth-child(2) {
     font-size: 2rem;
@@ -63,4 +65,10 @@ export const Search = styled.div`
     color: ${({theme}) => theme.COLORS.LIGHT_400};
   }
 
+`
+
+export const HeaderControl = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 `

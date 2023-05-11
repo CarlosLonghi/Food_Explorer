@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  grid-area: footer;
+  height: 8rem;
   width: 100%;
+
+  display: flex;
+  align-items: center;
   background-color: ${({theme}) => theme.COLORS.DARK_500};
 `
 
 export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 2rem 12rem;
+  padding: 0 12rem;
 
   > div {
     gap: 1rem;

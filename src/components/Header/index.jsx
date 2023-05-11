@@ -5,7 +5,7 @@ import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api';
 
 
-import { Container, Wrapper, Search } from "./styles";
+import { Container, Wrapper, Search, HeaderControl } from "./styles";
 
 import { Logo } from '../Logo'
 import { Button } from '../Button'
@@ -27,14 +27,16 @@ export function Header({onChange}) {
           />
         </Search>
 
-        <Button 
-          icon={TbReceipt}
-          title='Pedidos (0)'
-        />
+        <HeaderControl>
+          <Button 
+            icon={TbReceipt}
+            title='Pedidos (0)'
+          />
 
-        <ButtonText
-          icon={FiLogOut}
-        />
+          <ButtonText
+            icon={FiLogOut}
+          />
+        </HeaderControl>
       </Wrapper>
     </Container>
   )

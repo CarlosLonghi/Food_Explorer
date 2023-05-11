@@ -45,6 +45,13 @@ export function Home(){
       title: 'Card 4',
       description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
       price: 'R$ 49,97'
+    },
+    {
+      id: '5',
+      image: CardImage5,
+      title: 'Card 5',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97'
     }
 
   ]
@@ -63,6 +70,8 @@ export function Home(){
         </Head>
 
         <Carousel section='Refeições' cards={cards}/>
+        <Carousel section='Sobremesas' cards={cards}/>
+        <Carousel section='Bebidas' cards={cards}/>
 
       </Content>
 

@@ -12,7 +12,7 @@ export function Card ({ image, title, description, price }) {
         <BiHeart/>
       </FavButton>
 
-      <Content>
+      <Content to='/preview'>
         <img src={image} alt={title} />
         <h3>{title}</h3>
         <span>{description}</span>
