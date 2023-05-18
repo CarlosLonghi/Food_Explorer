@@ -4,26 +4,26 @@ import { Link } from 'react-router-dom'
 export const Container = styled.div`
   width: 35rem;
   margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+    'head'
+    'content'
+    'controls'
+  ;
   background-color: ${({theme}) => theme.COLORS.DARK_900};
   border: 0.1rem solid #000204;
   border-radius: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  padding: 0 3rem;
 `
-export const FavButton = styled.button`
+export const HeadButton = styled.div`
+  grid-area: head;
   background: transparent;
-  border: none;
-  font-size: 3rem;
   margin: 1.6rem 1.6rem 0 0;
   width: fit-content;
-  position: absolute;
-  z-index: 50;
+  justify-self: end;
   
-  display: flex;
-  align-items: center;
-  color: ${({theme}) => theme.COLORS.LIGHT_200};
+  > a {
+    color: ${({theme}) => theme.COLORS.LIGHT_200};
+  }
 
   transition: all 0.1s ease;
   :hover {
@@ -33,14 +33,15 @@ export const FavButton = styled.button`
 `
 
 export const Content= styled(Link)`
+  grid-area: content;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1.5rem;
+  padding: 4rem 2rem 4rem;
   
   img {
-    margin-top: 2.4rem;
     width: 18rem;
     height: 18rem;
     object-fit: cover;
@@ -67,11 +68,11 @@ export const Content= styled(Link)`
 `
 
 export const Controls = styled.div`
+  grid-area: controls;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 1.5rem;
   margin-bottom: 4rem;
 
   strong {
@@ -95,7 +96,7 @@ export const Control = styled.div`
   a {
     transition: all 0.1s ease;
     :active {
-      scale: 1.4;
+      scale: 1.3;
     }
   }
 `

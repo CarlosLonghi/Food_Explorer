@@ -24,7 +24,6 @@ export function Home(){
       description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
       price: 'R$ 49,97'
     },
-
     {
       id: '2',
       image: CardImage2,
@@ -53,7 +52,6 @@ export function Home(){
       description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
       price: 'R$ 49,97'
     }
-
   ]
 
   return(

@@ -36,12 +36,16 @@ export function Carousel ({section, cards}) {
         <div ref={sliderRef} className="keen-slider">
 
         {cards.map((card, index) => (
-          <div key={index} className="keen-slider__slide">
+          <div 
+            key={index}    
+            className="keen-slider__slide"
+          >
             <Card
               image={card.image}
               title={card.title}
               description={card.description}
               price={card.price}
+              isAdmin={true}
             />
           </div>
         ))}

@@ -12,8 +12,14 @@ import { BiPlus } from 'react-icons/bi'
 
 import CardImage from '../../assets/salada-ravanello.png'
 import { Tag } from '../../components/Tag';
+import { useNavigate } from 'react-router-dom'
 
 export function Preview(){
+
+  const navigate = useNavigate()
+  function handleBack(){
+    navigate(-1)
+  }
 
   return(
     <Container>
@@ -22,6 +28,7 @@ export function Preview(){
         <ButtonBack
           icon={BsChevronLeft}
           title='voltar'
+          onClick={handleBack}
         />
 
         <Content>
@@ -39,36 +46,6 @@ export function Preview(){
               <Tag 
                 title='Cebola'
               />  
-              <Tag 
-                title='Alface'
-              />  
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
-              <Tag 
-                title='Alface'
-              />
             </Tags>
 
             <Controls>
