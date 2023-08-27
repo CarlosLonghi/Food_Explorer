@@ -27,11 +27,30 @@ export const Wrapper = styled.div`
 
   justify-content: space-between;
 
-  > div :nth-child(2) {
-    font-size: 2rem;
-    line-height: normal;
-    flex-wrap: nowrap;
-    width: 100%;
+`
+
+export const Brand = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    h2 {
+      font-size: 2.4rem;
+      white-space: nowrap;
+    }
+  }
+
+  span {
+    color: ${({theme}) => theme.COLORS.CAKE_100};
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: end;
+    margin-top: -1.2rem;
   }
 `
 

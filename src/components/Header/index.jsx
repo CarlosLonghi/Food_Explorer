@@ -1,23 +1,32 @@
 import { FiSearch, FiLogOut } from 'react-icons/fi'
-import { TbReceipt } from 'react-icons/tb'
+import { TbReceipt, TbPlus } from 'react-icons/tb'
 
 import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api';
 
 
-import { Container, Wrapper, Search, HeaderControl } from "./styles";
+import { Container, Wrapper, Brand, Search, HeaderControl } from "./styles";
 
-import { Logo } from '../Logo'
 import { Button } from '../Button'
 import { ButtonText } from '../ButtonText'
+import BrandLogo from '../../assets/brand-logo.svg'
 
-export function Header({onChange}) {
+export function Header({onChange, isAdmin}) {
   const { signOut, user } = useAuth()
 
   return (
     <Container>
       <Wrapper>
-        <Logo/>
+        <Brand>
+          <div className="logo">
+            <img src={BrandLogo} alt="Brand Logo" />
+            <h2>food explorer</h2>
+          </div>
+          {
+            isAdmin &&
+            <span>admin</span>
+          }
+        </Brand>
 
         <Search>
           <FiSearch size={20}/>
@@ -29,8 +38,8 @@ export function Header({onChange}) {
 
         <HeaderControl>
           <Button 
-            icon={TbReceipt}
-            title='Pedidos (0)'
+            icon={isAdmin ? TbPlus : TbReceipt}
+            title={isAdmin ? 'Novo prato' : 'Pedidos (0)'}
           />
 
           <ButtonText

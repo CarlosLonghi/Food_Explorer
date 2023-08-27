@@ -56,7 +56,7 @@ export function Home(){
 
   return(
     <Container>
-      <Header/>
+      <Header isAdmin={true}/>
 
       <Content>
         <Head>

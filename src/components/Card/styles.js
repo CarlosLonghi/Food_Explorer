@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const HeadButton = styled.div`
   grid-area: head;
   background: transparent;
-  margin: 1.6rem 1.6rem 0 0;
+  margin: 2rem 4rem 0 0;
   width: fit-content;
   justify-self: end;
   
@@ -39,7 +39,7 @@ export const Content= styled(Link)`
   align-items: center;
   text-align: center;
   gap: 1.5rem;
-  padding: 4rem 2rem 4rem;
+  padding: 1rem 2rem 4rem;
   
   img {
     width: 18rem;

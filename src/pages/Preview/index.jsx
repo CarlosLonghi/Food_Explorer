@@ -23,7 +23,7 @@ export function Preview(){
 
   return(
     <Container>
-      <Header/>
+      <Header isAdmin={true}/>
       <Main>
         <ButtonBack
           icon={BsChevronLeft}

@@ -19,21 +19,19 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   grid-area: main;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 6rem;
   padding: 0 12rem;
 `
 
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: start;
   gap: 5rem;
-  margin-top: 6rem;
+  margin-top: 8rem;
   img {
-    width: 39rem;
-    height: 39rem;
+    width: 35rem;
+    height: 35rem;
   }
 `
 
