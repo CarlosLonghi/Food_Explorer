@@ -19,8 +19,8 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   grid-area: main;
-  margin-top: 6rem;
-  padding: 0 12rem;
+  margin-top: 2rem;
+  padding: 0 10rem;
 `
 
 export const Content = styled.div`
@@ -28,7 +28,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: start;
   gap: 5rem;
-  margin-top: 8rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   img {
     width: 35rem;
     height: 35rem;

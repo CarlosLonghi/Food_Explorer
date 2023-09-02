@@ -10,23 +10,31 @@ import { Container, Wrapper, Brand, Search, HeaderControl } from "./styles";
 import { Button } from '../Button'
 import { ButtonText } from '../ButtonText'
 import BrandLogo from '../../assets/brand-logo.svg'
+import { useNavigate, Link } from 'react-router-dom'
 
 export function Header({onChange, isAdmin}) {
   const { signOut, user } = useAuth()
+  const navigate = useNavigate()
+
+  function handleNew() {
+    navigate('/new')
+  }
 
   return (
     <Container>
       <Wrapper>
-        <Brand>
-          <div className="logo">
-            <img src={BrandLogo} alt="Brand Logo" />
-            <h2>food explorer</h2>
-          </div>
-          {
-            isAdmin &&
-            <span>admin</span>
-          }
-        </Brand>
+        <Link to='/'>
+          <Brand>
+            <div className="logo">
+              <img src={BrandLogo} alt="Brand Logo" />
+              <h2>food explorer</h2>
+            </div>
+            {
+              isAdmin &&
+              <span>admin</span>
+            }
+          </Brand>
+        </Link> 
 
         <Search>
           <FiSearch size={20}/>
@@ -40,6 +48,7 @@ export function Header({onChange, isAdmin}) {
           <Button 
             icon={isAdmin ? TbPlus : TbReceipt}
             title={isAdmin ? 'Novo prato' : 'Pedidos (0)'}
+            onClick={isAdmin ? handleNew : ''}
           />
 
           <ButtonText

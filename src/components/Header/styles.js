@@ -4,7 +4,7 @@ export const Container = styled.header`
   grid-area: header;
 
   height: 10.5rem;
-  width: 100vw;
+  width: 100%;
   background-color: ${({theme}) => theme.COLORS.DARK_500};
 
   display: flex;
@@ -23,16 +23,17 @@ export const Wrapper = styled.div`
   gap: 3.2rem;
   align-items: center;
   width: 100%;
-  padding: 2.8rem 12rem;
+  padding: 2.8rem 10rem;
 
   justify-content: space-between;
-
 `
 
 export const Brand = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
+  cursor: pointer;
+  color: ${({theme}) => theme.COLORS.LIGHT_100};
 
   .logo {
     display: flex;
@@ -56,12 +57,12 @@ export const Brand = styled.div`
 
 export const Search = styled.div`
   width: 100%;
-  padding: 1.2rem 8rem;
+  padding: 1.2rem 3%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1rem;
 
   background-color: ${({theme}) => theme.COLORS.DARK_300};
   border-radius: 5px;

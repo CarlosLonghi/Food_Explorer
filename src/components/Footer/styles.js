@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12rem;
+  padding: 0 10rem;
 
   > div {
     gap: 1rem;

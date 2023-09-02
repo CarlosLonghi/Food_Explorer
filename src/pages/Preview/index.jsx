@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom'
 export function Preview(){
 
   const navigate = useNavigate()
-  function handleBack(){
+  function handleBack() {
     navigate(-1)
   }
 

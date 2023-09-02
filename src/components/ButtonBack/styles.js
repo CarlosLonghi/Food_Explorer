@@ -12,7 +12,7 @@ export const Container = styled(Link)`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   
 `

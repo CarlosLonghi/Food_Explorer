@@ -9,7 +9,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 12rem;
+  padding: 0 10rem;
 `
 
 export const Head = styled.div`
