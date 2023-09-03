@@ -20,7 +20,7 @@ export const Container = styled.div`
 export const Main = styled.div`
   grid-area: main;
   margin-top: 2rem;
-  padding: 0 10rem;
+  padding: 0 10vw;
 `
 
 export const Content = styled.div`

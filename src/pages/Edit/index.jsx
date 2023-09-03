@@ -7,12 +7,16 @@ import { ButtonBack } from '../../components/ButtonBack';
 import { Button } from '../../components/Button';
 
 import { BsChevronLeft, BsUpload } from 'react-icons/bs'
-import { MdCreate } from 'react-icons/md'
+import { MdSave, MdCancel } from 'react-icons/md'
 import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import M from 'materialize-css';
 
-export function New(){
+
+export function Edit(){
   const textareaRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initializeSelect = () => {
@@ -26,6 +30,10 @@ export function New(){
     }    
   }, []);
 
+  function handleBack() {
+    navigate('/')
+  }
+
   return(
     <Container>
       <Header isAdmin={true}/>
@@ -36,7 +44,7 @@ export function New(){
         />
 
         <Content>
-          <Title>Adicionar prato</Title>
+          <Title>Editar prato</Title>
 
           <Form action="" className="col s12">
 
@@ -103,11 +111,19 @@ export function New(){
             <div className='row'>
               <div className='buttons col s12'>
                 <Button 
+                  id='cancel'
+                  icon={MdCancel}
+                  title={'Cancelar'}
+                  onClick={() => handleBack()}
+                />
+                <Button 
+                  id='confirm'
                   type="submit"
-                  icon={MdCreate}
-                  title={'Adicionar'}
+                  icon={MdSave}
+                  title={'Salvar Alterações'}
                 />
               </div>
+
             </div>
           </Form>
         </Content>

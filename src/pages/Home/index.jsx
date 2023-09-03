@@ -9,67 +9,25 @@ import { Footer } from '../../components/Footer';
 
 import HeadImage from '../../assets/mask-group.png'
 
-import CardImage from '../../assets/salada-ravanello.png'
-import CardImage2 from '../../assets/expresso.png'
-import CardImage3 from '../../assets/macarons.png'
-import CardImage4 from '../../assets/peachy-pastrie.png'
-import CardImage5 from '../../assets/salada-molla.png'
 
-export function Home(){
-  const cards = [
-    {
-      id: '1',
-      image: CardImage,
-      title: 'Card 1',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-      price: 'R$ 49,97'
-    },
-    {
-      id: '2',
-      image: CardImage2,
-      title: 'Card 2',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-      price: 'R$ 49,97'
-    },
-    {
-      id: '3',
-      image: CardImage3,
-      title: 'Card 3',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-      price: 'R$ 49,97'
-    },
-    {
-      id: '4',
-      image: CardImage4,
-      title: 'Card 4',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-      price: 'R$ 49,97'
-    },
-    {
-      id: '5',
-      image: CardImage5,
-      title: 'Card 5',
-      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
-      price: 'R$ 49,97'
-    }
-  ]
+export function Home({ isAdmin }){
 
   return(
     <Container>
-      <Header isAdmin={true}/>
+      <Header isAdmin={isAdmin}/>
 
       <Content>
         <Head>
-          <img src={HeadImage} alt="" />
+          <img className='responsive-img' src={HeadImage} alt="" />
           <div>
             <h1>Sabores inigualáveis</h1>
             <span>Sinta o cuidado do preparo com ingredientes selecionados</span>
           </div>
         </Head>
 
-        <Carousel section='Refeições' cards={cards}/>
-        <Carousel section='Sobremesas' cards={cards}/>
-        <Carousel section='Bebidas' cards={cards}/>
+        <Carousel section='Refeições' isAdmin={isAdmin}/>
+        <Carousel section='Sobremesas' isAdmin={isAdmin}/>
+        <Carousel section='Bebidas' isAdmin={isAdmin}/>
 
       </Content>
 

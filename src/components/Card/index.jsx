@@ -5,15 +5,15 @@ import { BiMinus, BiPlus, BiHeart, BiPencil } from 'react-icons/bi'
 import { ButtonText } from '../ButtonText'
 import { Button } from '../Button'
 
-export function Card ({ image, title, description, price, isAdmin }) {
+export function Card ({ data, isAdmin, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <HeadButton>
         {
           isAdmin ? 
             <ButtonText
               icon={BiPencil}
-              to='#'
+              to={`/edit/${data.id}`}
             />
           :
             <ButtonText
@@ -23,11 +23,11 @@ export function Card ({ image, title, description, price, isAdmin }) {
         }
       </HeadButton>
 
-      <Content to='/preview'>
-        <img src={image} alt={title} />
-        <h3>{title}</h3>
-        <span>{description}</span>
-        <h2>{price}</h2>
+      <Content to={`/preview/${data.id}`}>
+        <img src={data.image} alt={data.title} />
+        <h3>{data.title}</h3>
+        <span>{data.description}</span>
+        <h2>{data.price}</h2>
       </Content>
 
       {

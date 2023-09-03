@@ -32,7 +32,7 @@ export function Preview(){
         />
 
         <Content>
-          <img src={CardImage} alt="" />          
+          <img className='responsive-img' src={CardImage} alt="" />          
           <Details>
             <Title>
               Salada Ravanello

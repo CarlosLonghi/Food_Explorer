@@ -8,7 +8,53 @@ import { Container, NavigationWrapper, PrevButton, NextButton } from './styles'
 
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
-export function Carousel ({section, cards}) {
+import CardImage from '../../assets/salada-ravanello.png'
+import CardImage2 from '../../assets/expresso.png'
+import CardImage3 from '../../assets/macarons.png'
+import CardImage4 from '../../assets/bolo-de-damasco.png'
+import CardImage5 from '../../assets/salada-molla.png'
+
+
+export function Carousel ({ section, isAdmin }) {
+
+  const [cards] = useState([
+    {
+      id: 1,
+      image: CardImage,
+      title: 'Card 1',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97'
+    },
+    {
+      id: 2,
+      image: CardImage2,
+      title: 'Card 2',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97'
+    },
+    {
+      id: 3,
+      image: CardImage3,
+      title: 'Card 3',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97'
+    },
+    {
+      id: 4,
+      image: CardImage4,
+      title: 'Card 4',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97'
+    },
+    {
+      id: '5',
+      image: CardImage5,
+      title: 'Card 5',
+      description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim',
+      price: 'R$ 49,97',
+    }
+  ])
+
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: false,
@@ -23,9 +69,12 @@ export function Carousel ({section, cards}) {
       "(min-width: 1000px)": {
         slides: { perView: 1 },
       },
-      "(min-width: 1620px)": {
-        slides: { perView: 3 },
+      "(min-width: 1500px)": {
+        slides: { perView: 2 },
       },
+      "(min-width: 1700px)": {
+        slides: { perView: 3 },
+      }
     },
   })
 
@@ -41,11 +90,14 @@ export function Carousel ({section, cards}) {
             className="keen-slider__slide"
           >
             <Card
-              image={card.image}
-              title={card.title}
-              description={card.description}
-              price={card.price}
-              isAdmin={true}
+              data={{
+                id: card.id,
+                image: card.image,
+                title: card.title,
+                description: card.description,
+                price: card.price,
+              }}
+              isAdmin={isAdmin}
             />
           </div>
         ))}

@@ -28,6 +28,7 @@ export default {
 
     CARROT_100: '#FBA94C',
     MINT_100: '#04D361',
+    MINT_200: '#3EB489',
     CAKE_100: '#82F3FF',
     CAKE_200: '#065E7C',
   }

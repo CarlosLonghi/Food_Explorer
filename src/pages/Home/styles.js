@@ -4,12 +4,12 @@ export const Container = styled.div`
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  `
+`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 10rem;
+  padding: 0 10vw;
 `
 
 export const Head = styled.div`
@@ -19,29 +19,28 @@ export const Head = styled.div`
   height: 26rem;
   justify-content: space-between;
 
-  margin-top: 14rem;
+  margin-top: 5rem;
 
   color: ${({ theme }) => theme.COLORS.LIGHT_300};
   background: linear-gradient(180deg, #091e26 0%, #00131c 100%);
   border-radius: 0.8rem;
 
   img {
-    margin-top: -12.5rem;
     margin-left: -7rem;
   }
 
   > div {
-    margin-right: 10rem;
+    margin-right: 5vw;
     text-align: center;
     h1 {
-      font-size: 4rem;
-      line-height: 5.4rem;
+      font-size: 3.2rem;
+      line-height: 4rem;
       font-weight: 500;
     }
 
     span {
-      font-size: 1.6rem;
-      line-height: 1.6rem;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
     }
   }
 `

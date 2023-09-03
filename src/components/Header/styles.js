@@ -15,6 +15,10 @@ export const Container = styled.header`
     width: fit-content;
     white-space: nowrap;
     padding: 1.2rem 3.2rem;
+
+    &:focus {
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_300};
+    }
   }
 `
 
@@ -23,7 +27,7 @@ export const Wrapper = styled.div`
   gap: 3.2rem;
   align-items: center;
   width: 100%;
-  padding: 2.8rem 10rem;
+  padding: 2.8rem 10vw;
 
   justify-content: space-between;
 `
@@ -84,7 +88,6 @@ export const Search = styled.div`
   svg {
     color: ${({theme}) => theme.COLORS.LIGHT_400};
   }
-
 `
 
 export const HeaderControl = styled.div`
