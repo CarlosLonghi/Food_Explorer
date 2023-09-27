@@ -53,6 +53,7 @@ export function Header({onChange, isAdmin}) {
 
           <ButtonText
             icon={FiLogOut}
+            onClick={signOut}
           />
         </HeaderControl>
       </Wrapper>
