@@ -49,17 +49,17 @@ export function Edit(){
           <Form action="" className="col s12">
 
             <div className='row'>
-              <div class="file-field input-field col s6">
-                <div class="btn">
+              <div className="file-field input-field col s6">
+                <div className="btn">
                   <span><BsUpload/></span>
                   <input type="file" accept=".png, .jpeg" required/>
                 </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" placeholder='Selecione uma imagem'/>
+                <div className="file-path-wrapper">
+                  <input className="file-path validate" type="text" placeholder='Selecione uma imagem'/>
                 </div>
               </div>
                   
-              <div class="input-field col s6">
+              <div className="input-field col s6">
                 <input id="name" type="text" required/>
                 <label for="name">Nome</label>
               </div>
