@@ -1,4 +1,4 @@
-import { Container, Main, Content, Details, Title, Text, Tags, Controls, Control } from './styles';
+import { Container, Main, Content, Title, Text, Tags, Controls, Control } from './styles';
 
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
@@ -32,8 +32,8 @@ export function Preview(){
         />
 
         <Content>
-          <img className='responsive-img' src={CardImage} alt="" />          
-          <Details>
+          <img className='responsive-img' src={CardImage} alt="Product image"/>          
+          <div>
             <Title>
               Salada Ravanello
             </Title>
@@ -60,12 +60,13 @@ export function Preview(){
               </Control>
 
               <Button
+                className="green darken-4"
                 title='incluir ∙ R$ 25,00'
               />
 
             </Controls>
             
-          </Details>
+          </div>
        
         </Content>
 

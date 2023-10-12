@@ -50,7 +50,7 @@ export function Edit(){
 
             <div className='row'>
               <div className="file-field input-field col s6">
-                <div className="btn">
+                <div className="btn green darken-1">
                   <span><BsUpload/></span>
                   <input type="file" accept=".png, .jpeg" required/>
                 </div>
@@ -111,12 +111,14 @@ export function Edit(){
             <div className='row'>
               <div className='buttons col s12'>
                 <Button 
+                  className="red darken-4"
                   id='cancel'
                   icon={MdCancel}
                   title={'Cancelar'}
                   onClick={() => handleBack()}
                 />
                 <Button 
+                  className="green darken-1"
                   id='confirm'
                   type="submit"
                   icon={MdSave}

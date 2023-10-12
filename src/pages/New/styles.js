@@ -49,6 +49,12 @@ export const Form = styled.form`
     fill: ${({theme}) => theme.COLORS.LIGHT_300};
   }
 
+  .ingredients {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
   .buttons {
     display: flex;
     justify-content: end;

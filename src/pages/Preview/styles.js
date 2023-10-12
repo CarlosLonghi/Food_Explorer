@@ -31,23 +31,22 @@ export const Content = styled.div`
   margin-top: 2rem;
   margin-bottom: 3rem;
   img {
-    width: 35rem;
-    height: 35rem;
+    width: 30rem;
+    height: 30rem;
   }
 `
 
-export const Details = styled.div`
- 
-`
-
 export const Title = styled.h2`
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 500;
   color: ${({theme}) => theme.COLORS.LIGHT_300};
 `
 
 export const Text = styled.p`
-  margin: 2.4rem 0;
+  margin: 2rem 0;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  width: 80%;
 `
 
 export const Tags = styled.div`

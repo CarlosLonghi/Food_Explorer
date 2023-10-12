@@ -1,4 +1,4 @@
-import { FiPlus, FiX } from 'react-icons/fi'
+import { FiPlus, FiTrash2 } from 'react-icons/fi'
 
 import { Container } from './styles'
 
@@ -15,9 +15,9 @@ export function Item({ isNew, value, onClick, ...rest}){
       <button
         type='button'
         onClick={onClick}
-        className={isNew ? 'green darken-2' : 'red darken-2'}
+        className={isNew ? 'green darken-1' : 'red darken-1'}
       >
-        { isNew ? <FiPlus/> : <FiX/>}
+        { isNew ? <FiPlus/> : <FiTrash2/>}
       </button>
     </Container>
   )

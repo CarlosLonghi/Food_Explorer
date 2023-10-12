@@ -53,15 +53,8 @@ export const Form = styled.form`
     display: flex;
     justify-content: end;
     gap: 2rem;
-    #cancel {
-      background-color: ${({theme}) => theme.COLORS.TOMATO_400};
-    }
-    #confirm {
-      background-color: ${({theme}) => theme.COLORS.MINT_200};
-    }
   }
   button {
-    background: var(--tints-tomato-400, #AB4D55);
     font-size: 1.4rem;
     width: fit-content;
     padding: 0 4rem;

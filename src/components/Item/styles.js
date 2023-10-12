@@ -16,5 +16,9 @@ export const Container = styled.div`
     border: none;
     font-size: 25px;
     padding: 0 1.2rem 0.2rem;
+
+    svg {
+      color: ${({theme}) => theme.COLORS.LIGHT_100};
+    }
   }
 `

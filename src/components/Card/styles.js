@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  width: 30rem;
+  max-width: 28rem;
   margin: 0 auto;
   display: grid;
   grid-template-areas: 
@@ -28,13 +28,14 @@ export const HeadButton = styled.div`
   svg {
     transition: all 0.1s ease;
     &:hover {
-      fill: ${({theme}) => theme.COLORS.TOMATO_400};
-      filter: drop-shadow(1px 2px 5px ${({theme}) => theme.COLORS.TOMATO_300});
-      scale: 1.2;
+      scale: 1.3;
     }
-    &:active {
-      scale: 1.4;
-    }
+  }
+  .edit{
+    color: ${({theme}) => theme.COLORS.GREEN_200};
+  }
+  .fav {
+    color: ${({theme}) => theme.COLORS.TOMATO_300};
   }
 `
 
@@ -45,30 +46,31 @@ export const Content= styled(Link)`
   align-items: center;
   text-align: center;
   gap: 0.5rem;
-  padding: 1rem 2rem 1rem;
+  padding: 1rem 1.5rem 1rem;
   
   img {
-    width: 18rem;
-    height: 18rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: cover;
   }
 
   h3 {
     text-decoration: none;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 2.4rem;
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
 
   span {
     font-size: 1.4rem;
+    line-height: 1.6rem;
     color: ${({theme}) => theme.COLORS.LIGHT_400};
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: 400;
+    margin-top: 1.2rem;
     color: ${({theme}) => theme.COLORS.CAKE_100};
   }
 `

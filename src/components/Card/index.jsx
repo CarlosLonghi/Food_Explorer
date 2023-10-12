@@ -12,11 +12,13 @@ export function Card ({ data, isAdmin, ...rest }) {
         {
           isAdmin ? 
             <ButtonText
+              className="edit"
               icon={BiPencil}
               to={`/edit/${data.id}`}
             />
           :
             <ButtonText
+              className="fav"
               icon={BiHeart}
               to='#'
             />
@@ -44,6 +46,7 @@ export function Card ({ data, isAdmin, ...rest }) {
           </Control>
 
           <Button
+            className="red darken-4"
             title='Incluir'
           /> 
         </Controls>
