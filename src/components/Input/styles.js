@@ -6,7 +6,7 @@ export const Container = styled.div`
   gap: 0.5rem;
   border-radius: 0.5rem;
   background-color: ${({theme}) => theme.COLORS.DARK_300};
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 0 1.5rem;
 
   > input {

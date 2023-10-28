@@ -4,14 +4,12 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   
   display: flex;
-  justify-content: center;
   align-items: center;
-  align-self: center;
   gap: 2rem;
 
   h1 {
-    font-size: 4.2rem;
-    line-height: 4.9rem;
+    font-size: clamp(3rem, 4rem, 5vw);
+    font-weight: 900;
     white-space: nowrap;
   }  
 `

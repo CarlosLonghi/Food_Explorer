@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  max-width: 28rem;
+  max-width: 26rem;
   margin: 0 auto;
   display: grid;
   grid-template-areas: 

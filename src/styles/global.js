@@ -19,6 +19,9 @@ export default createGlobalStyle`
     font-size: 1.6rem;
     outline: none;
   }
+  h1, h2, h3, h4 {
+    margin: unset;
+  }
   a {
     text-decoration: none;
   }

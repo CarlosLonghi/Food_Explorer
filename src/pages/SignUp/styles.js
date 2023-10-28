@@ -5,7 +5,6 @@ export const Container = styled.div`
   width: 100vw;
   
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
 `
 
@@ -14,21 +13,22 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  padding: 6rem;
-  width: 50rem;
+  padding: 3rem;
+  width: 35%;
+  min-width: 450px;
 
   background-color: ${({theme}) => theme.COLORS.DARK_400};
   border-radius: 1.6rem;
 
   h2 {
     text-align: center;
-    font-size: 3.2rem;
-    line-height: 4.5rem;
+    font-size: clamp(2.2rem, 3rem, 5vw);
     font-weight: 500;
     
     color: ${({theme}) => theme.COLORS.LIGHT_100};
     text-shadow: 1px 0px 18px ${({ theme }) => theme.COLORS.DARK_900};
-    margin-bottom: 3rem;
+    margin: unset;
+    margin-bottom: 2rem;
   }
   
   > div {
@@ -36,7 +36,8 @@ export const Form = styled.form`
   }
     
   > Button {
-    margin-bottom: 3.2rem;
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
+    margin-bottom: 2rem;
   }
 
   a {

@@ -5,8 +5,14 @@ export const Container = styled.div`
   width: 100vw;
   
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+  }
 `
 
 export const Form = styled.form`
@@ -14,36 +20,36 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  padding: 6rem;
-  width: 50rem;
+  padding: 3rem;
+  width: 35%;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_400};
   border-radius: 1.6rem;
 
   h2 {
     text-align: center;
-    font-size: 3.2rem;
-    line-height: 4.5rem;
+    font-size: clamp(2.2rem, 3rem, 5vw);
     font-weight: 500;
 
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     text-shadow: 1px 0px 18px ${({ theme }) => theme.COLORS.DARK_900};
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   > div {
     background-color: ${({theme}) => theme.COLORS.DARK_200};
   }
 
-  > :nth-child(3) {
-    margin-bottom: 3.2rem;
-  }
-
   > Button {
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
     margin-bottom: 3.2rem;
   }
 
   a {
     align-self: center;
+  }
+
+  @media (max-width: 992px) {
+    width: 80%;
   }
 `
