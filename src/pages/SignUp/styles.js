@@ -2,10 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100vw;
   
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
 `
 
 export const Form = styled.form`
@@ -15,7 +21,6 @@ export const Form = styled.form`
   align-self: center;
   padding: 3rem;
   width: 35%;
-  min-width: 450px;
 
   background-color: ${({theme}) => theme.COLORS.DARK_400};
   border-radius: 1.6rem;
@@ -42,5 +47,9 @@ export const Form = styled.form`
 
   a {
     align-self: center;
+  }
+
+  @media (max-width: 992px) {
+    width: 80%;
   }
 `

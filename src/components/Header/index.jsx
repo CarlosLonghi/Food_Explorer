@@ -34,7 +34,7 @@ export function Header({onChange, isAdmin}) {
               <span>admin</span>
             }
           </Brand>
-        </Link> 
+        </Link>
 
         <Search>
           <FiSearch size={20}/>
@@ -54,6 +54,7 @@ export function Header({onChange, isAdmin}) {
           <ButtonText
             icon={FiLogOut}
             onClick={signOut}
+            to='/'
           />
         </HeaderControl>
       </Wrapper>
