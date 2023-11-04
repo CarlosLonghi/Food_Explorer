@@ -9,12 +9,11 @@ import { Footer } from '../../components/Footer';
 
 import HeadImage from '../../assets/mask-group.png'
 
-
-export function Home({ isAdmin }){
+export function Home(){
 
   return(
     <Container>
-      <Header isAdmin={isAdmin}/>
+      <Header/>
 
       <Content>
         <Head>
@@ -25,9 +24,9 @@ export function Home({ isAdmin }){
           </div>
         </Head>
 
-        <Carousel section='Refeições' isAdmin={isAdmin}/>
-        <Carousel section='Sobremesas' isAdmin={isAdmin}/>
-        <Carousel section='Bebidas' isAdmin={isAdmin}/>
+        <Carousel section='Refeições'/>
+        <Carousel section='Sobremesas'/>
+        <Carousel section='Bebidas'/>
 
       </Content>
 

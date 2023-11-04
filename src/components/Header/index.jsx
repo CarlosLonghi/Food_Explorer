@@ -1,8 +1,9 @@
-import { FiSearch, FiLogOut } from 'react-icons/fi'
-import { TbReceipt, TbPlus } from 'react-icons/tb'
+import { FiSearch, FiLogOut } from 'react-icons/fi';
+import { TbReceipt, TbPlus } from 'react-icons/tb';
 
-import { useAuth } from '../../hooks/auth'
+import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
+import { USER_ROLES } from '../../utils/roles';
 
 
 import { Container, Wrapper, Brand, Search, HeaderControl } from "./styles";
@@ -26,11 +27,11 @@ export function Header({onChange, isAdmin}) {
         <Link to='/'>
           <Brand>
             <div className="logo">
-              <img src={BrandLogo} alt="Brand Logo" />
+              <img src={BrandLogo} alt="Logo Food Explorer" />
               <h2>food explorer</h2>
             </div>
             {
-              isAdmin &&
+              [USER_ROLES.ADMIN].includes(user.role) &&
               <span>admin</span>
             }
           </Brand>
@@ -45,11 +46,21 @@ export function Header({onChange, isAdmin}) {
         </Search>
 
         <HeaderControl>
-          <Button 
-            icon={isAdmin ? TbPlus : TbReceipt}
-            title={isAdmin ? 'Novo prato' : 'Pedidos (0)'}
-            onClick={isAdmin ? handleNew : ''}
-          />
+          {
+            [USER_ROLES.ADMIN].includes(user.role) &&
+            <Button 
+              icon={TbPlus}
+              title={'Novo prato'}
+              onClick={handleNew}
+            />
+            ||
+            [USER_ROLES.CUSTOMER].includes(user.role) &&
+            <Button 
+              icon={TbReceipt}
+              title={'Pedidos (0)'}
+              onClick={'#'}
+            />
+          }
 
           <ButtonText
             icon={FiLogOut}

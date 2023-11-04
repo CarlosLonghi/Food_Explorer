@@ -1,20 +1,15 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-  grid-area: header;
-
   height: 10.5rem;
   width: 100%;
   background-color: ${({theme}) => theme.COLORS.DARK_500};
 
-  display: flex;
-  align-items: center;
-  
   button {
-    height: 5.6rem;
+    grid-area: button;
     width: fit-content;
     white-space: nowrap;
-    padding: 1.2rem 3.2rem;
+    padding: 1.2rem 2rem;
 
     &:focus {
       background-color: ${({ theme }) => theme.COLORS.TOMATO_300};
@@ -24,12 +19,11 @@ export const Container = styled.header`
 
 export const Wrapper = styled.div`
   display: flex;
-  gap: 3.2rem;
   align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
   width: 100%;
   padding: 2.8rem 10vw;
-
-  justify-content: space-between;
 `
 
 export const Brand = styled.div`
@@ -45,7 +39,7 @@ export const Brand = styled.div`
     gap: 1rem;
     
     h2 {
-      font-size: 2.4rem;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       white-space: nowrap;
     }
   }
@@ -63,7 +57,6 @@ export const Search = styled.div`
   width: 100%;
   padding: 1.2rem 3%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1rem;

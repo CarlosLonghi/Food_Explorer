@@ -5,14 +5,13 @@ import { Preview } from '../pages/Preview'
 import { New } from '../pages/New'
 import { Edit } from '../pages/Edit'
 
-export function AppRoutes(){
+export function AdminRoutes(){
   return(
     <Routes>
-      <Route path='/' element={<Home isAdmin={true}/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/new' element={<New/>}/>
       <Route path='/preview/:id' element={<Preview/>}/>
       <Route path='/edit/:id' element={<Edit/>}/>
-
     </Routes>
   )
 }
