@@ -6,7 +6,7 @@ import { api } from '../../services/api';
 import { USER_ROLES } from '../../utils/roles';
 
 
-import { Container, Wrapper, Brand, Search, HeaderControl } from "./styles";
+import { Container, Brand, Search, HeaderControl } from "./styles";
 
 import { Button } from '../Button'
 import { ButtonText } from '../ButtonText'
@@ -17,58 +17,52 @@ export function Header({onChange, isAdmin}) {
   const { signOut, user } = useAuth()
   const navigate = useNavigate()
 
-  function handleNew() {
-    navigate('/new')
-  }
-
   return (
     <Container>
-      <Wrapper>
-        <Link to='/'>
-          <Brand>
-            <div className="logo">
-              <img src={BrandLogo} alt="Logo Food Explorer" />
-              <h2>food explorer</h2>
-            </div>
-            {
-              [USER_ROLES.ADMIN].includes(user.role) &&
-              <span>admin</span>
-            }
-          </Brand>
-        </Link>
-
-        <Search>
-          <FiSearch size={20}/>
-          <input 
-            type="text" 
-            placeholder='Busque por pratos ou ingredientes'
-          />
-        </Search>
-
-        <HeaderControl>
+      <Link to='/'>
+        <Brand>
+          <div className="logo">
+            <img src={BrandLogo} alt="Logo Food Explorer" />
+            <h2>food explorer</h2>
+          </div>
           {
             [USER_ROLES.ADMIN].includes(user.role) &&
-            <Button 
-              icon={TbPlus}
-              title={'Novo prato'}
-              onClick={handleNew}
-            />
-            ||
-            [USER_ROLES.CUSTOMER].includes(user.role) &&
-            <Button 
-              icon={TbReceipt}
-              title={'Pedidos (0)'}
-              onClick={'#'}
-            />
+            <span>admin</span>
           }
+        </Brand>
+      </Link>
 
-          <ButtonText
-            icon={FiLogOut}
-            onClick={signOut}
-            to='/'
+      <Search>
+        <FiSearch size={20}/>
+        <input 
+          type="text" 
+          placeholder='Busque por pratos ou ingredientes'
+        />
+      </Search>
+
+      <HeaderControl>
+        {
+          [USER_ROLES.ADMIN].includes(user.role) &&
+          <Button 
+            icon={TbPlus}
+            title={'Novo prato'}
+            onClick={() => navigate('/new')}
           />
-        </HeaderControl>
-      </Wrapper>
+          ||
+          [USER_ROLES.CUSTOMER].includes(user.role) &&
+          <Button 
+            icon={TbReceipt}
+            title={'Pedidos (0)'}
+            onClick={'#'}
+          />
+        }
+
+        <ButtonText
+          icon={FiLogOut}
+          onClick={signOut}
+          to='/'
+        />
+      </HeaderControl>
     </Container>
   )
 }

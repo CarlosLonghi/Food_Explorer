@@ -8,39 +8,42 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 0 10vw;
 `
 
 export const Head = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
-  height: 26rem;
-  justify-content: space-between;
-
-  margin-top: 5rem;
+  height: 16.25rem;
+  justify-content: end;
+  margin-top: 9rem;
+  position: relative;
 
   color: ${({ theme }) => theme.COLORS.LIGHT_300};
   background: linear-gradient(180deg, #091e26 0%, #00131c 100%);
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 
   img {
-    margin-left: -7rem;
+    position: absolute;
+    left: -2rem;
+    bottom: -0.8rem;
+    margin-left: -4.375rem;
+    width: 38rem;
+    height: 24rem;
   }
 
   > div {
-    margin-right: 5vw;
+    margin-right: 4rem;
     text-align: center;
     h1 {
-      font-size: 3.2rem;
-      line-height: 4rem;
+      font-size: 2rem;
+      line-height: 2.4rem;
       font-weight: 500;
     }
 
     span {
-      font-size: 1.4rem;
-      line-height: 1.4rem;
+      font-size: 0.875rem;
+      line-height: 0.875rem;
     }
   }
 `

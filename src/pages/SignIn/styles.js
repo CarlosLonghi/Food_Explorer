@@ -1,16 +1,16 @@
 import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakPoints'
 
 export const Container = styled.div`
-  height: 100vh;
-  
   display: flex;
   justify-content: space-around;
+  height: 100vh;
 
-  @media (max-width: 992px) {
+  @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
+    gap: 6.25rem;
   }
 `
 
@@ -19,20 +19,20 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  padding: 3rem;
-  width: 35%;
+  padding: 1.875rem;
+  width: 35rem;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_400};
-  border-radius: 1.6rem;
+  border-radius: 1rem;
 
   h2 {
     text-align: center;
-    font-size: clamp(2.2rem, 3rem, 5vw);
+    font-size: 1.875rem;
     font-weight: 500;
 
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     text-shadow: 1px 0px 18px ${({ theme }) => theme.COLORS.DARK_900};
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   > div {
@@ -41,14 +41,18 @@ export const Form = styled.form`
 
   > Button {
     background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
-    margin-bottom: 3.2rem;
+    margin-bottom: 2rem;
   }
 
   a {
     align-self: center;
   }
 
-  @media (max-width: 992px) {
-    width: 80%;
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 70%;
+  }
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    background-color: transparent;
+    width: 90%;
   }
 `

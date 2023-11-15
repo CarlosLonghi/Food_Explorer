@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   grid-area: footer;
-  height: 8rem;
+  height: 5rem;
   width: 100%;
 
   display: flex;
@@ -18,23 +18,22 @@ export const Wrapper = styled.div`
   padding: 0 10vw;
 
   > div {
-    gap: 1rem;
+    gap: 0.625rem;
 
     svg {
-      height: 3rem;
-      height: 3rem;
+      height: 1.875rem;
       filter: grayscale(1);
     }
     
     h1 {
-      font-size: 2.4rem;
+      font-size: 1.5rem;
       color: ${({theme}) => theme.COLORS.LIGHT_700};
     }
   }
 
   span {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 0.937rem;
     color: ${({theme}) => theme.COLORS.LIGHT_200};
   }
 `

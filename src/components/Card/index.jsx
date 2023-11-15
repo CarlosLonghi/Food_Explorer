@@ -51,7 +51,7 @@ export function Card ({ data, ...rest }) {
           </Control>
 
           <Button
-            className="red darken-4"
+            className="red darken-4 pulse"
             title='Incluir'
           /> 
         </Controls>

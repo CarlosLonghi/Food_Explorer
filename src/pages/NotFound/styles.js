@@ -12,9 +12,9 @@ export const Container = styled.div`
   > a {
     color: ${({ theme }) => theme.COLORS.LIGHT_200};
     background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
-    border-radius: 0.5rem;
-    padding: 1rem;
-    font-size: 1.6rem;
-    margin-top: 3rem;
+    border-radius: 5px;
+    padding: 0.625rem;
+    font-size: 1rem;
+    margin-top: 1.875rem;
   }
 `;

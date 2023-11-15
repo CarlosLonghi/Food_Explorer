@@ -57,22 +57,18 @@ export function Carousel ({ section, isAdmin }) {
 
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
-    loop: false,
-    mode: "free-snap",
+    loop: true,
+    mode: "snap",
     initial: 0,
-
     created() {
       setLoaded(true)
     },
     
     breakpoints: {
-      "(min-width: 1000px)": {
-        slides: { perView: 1 },
-      },
-      "(min-width: 1500px)": {
+      "(min-width: 768px)": {
         slides: { perView: 2 },
       },
-      "(min-width: 1700px)": {
+      "(min-width: 1440px)": {
         slides: { perView: 3 },
       }
     },

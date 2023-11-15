@@ -30,10 +30,6 @@ export function Edit(){
     }    
   }, []);
 
-  function handleBack() {
-    navigate('/')
-  }
-
   return(
     <Container>
       <Header isAdmin={true}/>
@@ -41,6 +37,7 @@ export function Edit(){
         <ButtonBack
           icon={BsChevronLeft}
           title='voltar'
+          onClick={() => navigate(-1)}
         />
 
         <Content>
@@ -61,7 +58,7 @@ export function Edit(){
                   
               <div className="input-field col s6">
                 <input id="name" type="text" required/>
-                <label for="name">Nome</label>
+                <label htmlFor="name">Nome</label>
               </div>
             </div>
 
@@ -77,12 +74,12 @@ export function Edit(){
                   <option value="sobremesa">Sobremesa</option>
                 </select>
 
-                <label for="category">Categoria</label>
+                <label htmlFor="category">Categoria</label>
               </div>
                 
               <div className="input-field col s6">
                 <input id="price" type="text" required/>
-                <label for="price">Preço</label>
+                <label htmlFor="price">Preço</label>
               </div>
             </div>
             
@@ -104,7 +101,7 @@ export function Edit(){
                   ref={textareaRef}
                   required
                 ></textarea>
-                <label for="description">Descrição</label>
+                <label htmlFor="description">Descrição</label>
               </div>
             </div>
 
@@ -115,7 +112,7 @@ export function Edit(){
                   id='cancel'
                   icon={MdCancel}
                   title={'Cancelar'}
-                  onClick={() => handleBack()}
+                  onClick={() => navigate(-1)}
                 />
                 <Button 
                   className="green darken-1"

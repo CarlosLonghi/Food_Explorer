@@ -3,16 +3,14 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 0.5rem;
+  gap: 0.4rem;
+  border-radius: 5px;
   background-color: ${({theme}) => theme.COLORS.DARK_300};
-  margin-bottom: 2rem;
-  padding: 0.8rem 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem;
 
   > input {
-    width: 100%;
-    height: 2.2rem !important;
-    
+    height: 1.8rem !important;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     background: transparent;
 

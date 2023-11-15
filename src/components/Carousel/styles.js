@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  margin: 3rem 0;
+  margin: 1.875rem 0;
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   > h2 {
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    text-align: left;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 `
 
@@ -28,7 +27,7 @@ export const NavigationWrapper = styled.div`
   
       color: ${({theme}) => theme.COLORS.LIGHT_100};
       svg {
-        font-size: 4rem;
+        font-size: 2.5rem;
         transition: all 0.3s ease;
         :active {
           scale: 1.2;

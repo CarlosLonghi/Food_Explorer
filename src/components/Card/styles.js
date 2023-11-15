@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  max-width: 26rem;
+  max-width: 18rem;
   margin: 0 auto;
   display: grid;
   grid-template-areas: 
@@ -12,12 +12,12 @@ export const Container = styled.div`
   ;
   background-color: ${({theme}) => theme.COLORS.DARK_900};
   border: 0.1rem solid #000204;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
 `
 export const HeadButton = styled.div`
   grid-area: head;
   background: transparent;
-  margin: 2rem 4rem 0 0;
+  margin: 1.25rem 2.5rem 0 0;
   width: fit-content;
   justify-self: end;
   
@@ -45,32 +45,33 @@ export const Content= styled(Link)`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem 1rem;
+  gap: 0.4rem;
+  padding: 1rem 1.2rem 1rem;
   
   img {
-    width: 15rem;
-    height: 15rem;
+    width: 11rem;
+    height: 11rem;
     object-fit: cover;
   }
 
   h3 {
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: ${({theme}) => theme.COLORS.LIGHT_300};
+    margin-top: 0.5rem;
   }
 
   span {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
+    font-size: 0.875rem;
+    line-height: 0.9rem;
     color: ${({theme}) => theme.COLORS.LIGHT_400};
   }
 
   h2 {
-    font-size: 2.2rem;
+    font-size: 1.375rem;
     font-weight: 400;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     color: ${({theme}) => theme.COLORS.CAKE_100};
   }
 `
@@ -81,10 +82,10 @@ export const Controls = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 
   strong {
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
   button {
@@ -102,8 +103,8 @@ export const Controls = styled.div`
 export const Control = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.4rem;
-  margin-right: 1.6rem;
+  gap: 1rem;
+  margin-right: 1.2rem;
   a {
     transition: all 0.1s ease;
     :active {

@@ -5,10 +5,10 @@ export const Container = styled.div`
   
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 
   h1 {
-    font-size: clamp(3rem, 4rem, 5vw);
+    font-size: 2.5rem;
     font-weight: 900;
     white-space: nowrap;
   }  

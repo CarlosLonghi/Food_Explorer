@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Container, Main, Content, Title, Form } from './styles';
 import M from 'materialize-css';
 
@@ -15,15 +16,17 @@ import { Item } from '../../components/Item';
 
 
 export function New(){
+  const navigate = useNavigate()
+
   const textareaRef = useRef(null)
-  const [image, setImage] = useState()
+  // const [image, setImage] = useState()
   const [name, setName] = useState()
-  const [category, setCategory] = useState()
+  const [categoryId, setCategoryId] = useState()
   const [price, setPrice] = useState()
-  const [description, setDescription] = useState()
 
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState('')
+  const [description, setDescription] = useState()
 
   useEffect(() => {
     const initializeSelect = () => {
@@ -48,17 +51,25 @@ export function New(){
   function handleRemoveIngredient(deleted){
     setIngredients(prevState => prevState.filter(tag => tag !== deleted))
   }
-  
 
   async function handleSubmit() {
-    console.log({ name, description, category_id, image, price,  ingredients});
     await api.post('/product', {
       name,
-      description,
-      category_id, 
-      image,
+      category_id: categoryId, 
       price,
-      ingredients
+      // image,
+      ingredients,
+      description
+    })
+    .then(() => {
+      alert('Produto cadastrado com sucesso!')
+    })
+    .catch(error => {
+      if(error.response){
+        alert(error.response.data.message)
+      }else {
+        alert('Erro ao cadastrar o produto!')
+      }
     })
   }
 
@@ -69,15 +80,15 @@ export function New(){
         <ButtonBack
           icon={BsChevronLeft}
           title='voltar'
+          onClick={() => navigate(-1)}
         />
 
         <Content>
           <Title>Adicionar prato</Title>
 
           <Form className="col s12">
-
             <div className='row'>
-              <div className="file-field input-field col s6">
+              {/* <div className="file-field input-field col s6">
                 <div className="btn green darken-1">
                   <span><BsUpload/></span>
                   <input 
@@ -90,7 +101,7 @@ export function New(){
                 <div className="file-path-wrapper">
                   <input className="file-path validate" type="text" placeholder='Selecione uma imagem'/>
                 </div>
-              </div>
+              </div> */}
                   
               <div className="input-field col s6">
                 <input 
@@ -109,7 +120,7 @@ export function New(){
                   id='category_id'
                   name='category_id'
                   defaultValue=""
-                  onChange={event => setCategory(event.target.value)}
+                  onChange={event => setCategoryId(event.target.value)}
                   required
                 >
                   <option value="" disabled>Selecione...</option>

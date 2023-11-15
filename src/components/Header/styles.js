@@ -1,29 +1,23 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-  height: 10.5rem;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: ${({theme}) => theme.COLORS.DARK_500};
+  padding: 1.75rem 10vw;
+  gap: 1.2rem;
 
   button {
     grid-area: button;
     width: fit-content;
     white-space: nowrap;
-    padding: 1.2rem 2rem;
+    padding: 1.70rem 1.25rem;
 
     &:focus {
       background-color: ${({ theme }) => theme.COLORS.TOMATO_300};
     }
   }
-`
-
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3.2rem;
-  width: 100%;
-  padding: 2.8rem 10vw;
 `
 
 export const Brand = styled.div`
@@ -36,39 +30,40 @@ export const Brand = styled.div`
   .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    
+    gap: 0.625rem;
+    img {
+      width: 3rem;
+      height: auto;
+    }
     h2 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-size: 1.5rem;
       white-space: nowrap;
     }
   }
 
   span {
     color: ${({theme}) => theme.COLORS.CAKE_100};
-    font-size: 1.4rem;
+    font-size: 0.875rem;
     font-weight: 500;
     text-align: end;
-    margin-top: -1.2rem;
+    margin-top: -0.75rem;
   }
 `
 
 export const Search = styled.div`
   width: 100%;
-  padding: 1.2rem 3%;
+  padding: 0.6rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.625rem;
 
-  background-color: ${({theme}) => theme.COLORS.DARK_300};
+  background-color: ${({theme}) => theme.COLORS.DARK_200};
   border-radius: 5px;
   
   > input {
-    width: 100%;
-    background: transparent;
-    border: 0;
-
+    border: none;
+    height: 1.8rem !important;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
     &::placeholder {
@@ -86,5 +81,5 @@ export const Search = styled.div`
 export const HeaderControl = styled.div`
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1.875rem;
 `

@@ -5,10 +5,11 @@ export const Container = styled.div`
   display: grid;
   grid-template-areas: 
     'header'
-    'main'
+    'button-back'
+    'product'
     'footer'
   ;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
 
   > Header {
     div:nth-child(2) {
@@ -18,67 +19,66 @@ export const Container = styled.div`
 `
 
 export const Main = styled.div`
-  grid-area: main;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 0 10vw;
 `
 
 export const Content = styled.div`
+  grid-area: product;
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 5rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  gap: 3.125rem;
+  margin: 4rem 0 1rem;
   img {
-    width: 30rem;
-    height: 30rem;
+    width: 18rem;
+    height: 18rem;
   }
 `
 
 export const Title = styled.h2`
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: 500;
   color: ${({theme}) => theme.COLORS.LIGHT_300};
 `
 
 export const Text = styled.p`
-  margin: 2rem 0;
-  font-size: 1.8rem;
-  line-height: 2rem;
+  margin: 1.25rem 0;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
   width: 80%;
 `
 
 export const Tags = styled.div`
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 1rem;
+    gap: 0.625rem;
 `
 
 export const Controls = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 4rem;
-  gap: 3rem;
+  margin-top: 2.5rem;
+  gap: 1.875rem;
 
   strong {
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
 
   button {
     width: fit-content;
-    padding: 1.2rem 2.4rem;
+    padding: 0.75rem 1.5rem;
   }
 `
 
 export const Control = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 0.875rem;
   svg {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     transition: all 0.1s ease;
     :active {
       scale: 1.4;

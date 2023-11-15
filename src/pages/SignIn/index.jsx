@@ -28,17 +28,17 @@ export function SignIn() {
       <Form>
         <h2>Faça login</h2>  
         
-          <Label for='email' text='Email'/>
+          <Label htmlFor='email' text='Email'/>
           <Input
             id='email'
-            placeholder='Exemplo: exemplo@exemplo.com.br'
+            placeholder='exemplo@exemplo.com.br'
             type='text'
             icon={FiMail}
             onChange={event => setEmail(event.target.value)}
           />
         
 
-        <Label for='password' text='Senha'/>
+        <Label htmlFor='password' text='Senha'/>
         <Input
           id='password'
           placeholder='No mínimo 6 dígitos'

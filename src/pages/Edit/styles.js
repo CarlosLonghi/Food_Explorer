@@ -19,17 +19,17 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   grid-area: main;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   padding: 0 10vw;
 `
 
 export const Content = styled.div`
-  gap: 5rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  gap: 3.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.875rem;
   img {
-    width: 35rem;
-    height: 35rem;
+    width: 20rem;
+    height: 20rem;
   }
 `
 
@@ -38,11 +38,11 @@ export const Form = styled.form`
     color: ${({theme}) => theme.COLORS.LIGHT_300};
   }
   label {
-    font-size: 1.2rem;
+    font-size: 0.875rem;
   }
   .file-field {
     span {
-      font-size: 2.2rem;
+      font-size: 1.375rem;
     }
   }
   .input-field .caret {
@@ -52,17 +52,17 @@ export const Form = styled.form`
   .buttons {
     display: flex;
     justify-content: end;
-    gap: 2rem;
+    gap: 1.25rem;
   }
   button {
-    font-size: 1.4rem;
+    font-size: 1rem;
     width: fit-content;
-    padding: 0 4rem;
+    padding: 0 2.5rem;
   }
 `
 
 export const Title = styled.h2`
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 400;
   color: ${({theme}) => theme.COLORS.LIGHT_300};
 `

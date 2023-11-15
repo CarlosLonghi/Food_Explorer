@@ -14,8 +14,8 @@ export const Container = styled.div`
 
   > button {
     border: none;
-    font-size: 25px;
-    padding: 0 1.2rem 0.2rem;
+    font-size: 1.56rem;
+    padding: 0 1rem 2px;
 
     svg {
       color: ${({theme}) => theme.COLORS.LIGHT_100};

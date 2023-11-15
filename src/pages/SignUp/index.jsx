@@ -53,7 +53,7 @@ export function SignUp() {
 
       <Form>
         <h2>Crie sua conta</h2>
-        <Label for='name' text='Nome'/>
+        <Label htmlFor='name' text='Nome'/>
         <Input
           id='name'
           placeholder='Exemplo: Maria da Silva'
@@ -62,7 +62,7 @@ export function SignUp() {
           onChange={event => setName(event.target.value)}
         />
 
-        <Label for='email' text='Email'/>
+        <Label htmlFor='email' text='Email'/>
         <Input
           id='email'
           placeholder='Exemplo: exemplo@exemplo.com.br'
@@ -71,7 +71,7 @@ export function SignUp() {
           onChange={event => setEmail(event.target.value)}
         />
 
-        <Label for='password' text='Senha'/>
+        <Label htmlFor='password' text='Senha'/>
         <Input
           id='password'
           placeholder='No mínimo 6 dígitos'
@@ -79,7 +79,7 @@ export function SignUp() {
           icon={FiLock}
           onChange={event => setPassword(event.target.value)}
         />
-        <Label for='confirm' text='Confirmar Senha'/>
+        <Label htmlFor='confirm' text='Confirmar Senha'/>
         <Input
           id='confirm'
           placeholder='No mínimo 6 dígitos'
@@ -99,7 +99,6 @@ export function SignUp() {
           to={-1}
         />
       </Form>
-      
     </Container>
   )
 }

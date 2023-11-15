@@ -15,20 +15,16 @@ import { Tag } from '../../components/Tag';
 import { useNavigate } from 'react-router-dom'
 
 export function Preview(){
-
   const navigate = useNavigate()
-  function handleBack() {
-    navigate(-1)
-  }
 
   return(
     <Container>
-      <Header isAdmin={true}/>
+      <Header/>
       <Main>
         <ButtonBack
           icon={BsChevronLeft}
           title='voltar'
-          onClick={handleBack}
+          onClick={() => navigate(-1)}
         />
 
         <Content>
@@ -63,13 +59,11 @@ export function Preview(){
                 className="green darken-4"
                 title='incluir ∙ R$ 25,00'
               />
-
             </Controls>
             
           </div>
        
         </Content>
-
       </Main>
       
       <Footer/>
