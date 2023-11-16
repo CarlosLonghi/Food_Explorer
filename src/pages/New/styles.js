@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-areas: 
     'header'
-    'main'
+    'content'
     'footer'
   ;
   grid-template-rows: auto 1fr auto;
@@ -18,12 +18,15 @@ export const Container = styled.div`
 `
 
 export const Main = styled.div`
-  grid-area: main;
-  margin-top: 1.25rem;
+  margin-top: 3rem;
   padding: 0 10vw;
+  a {
+    margin-bottom: 2.5rem;
+  }
 `
 
 export const Content = styled.div`
+  grid-area: content;
   gap: 3.125rem;
   margin-top: 1.25rem;
   margin-bottom: 1.875rem;

@@ -9,7 +9,7 @@ export const Container = styled.div`
     'product'
     'footer'
   ;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
 
   > Header {
     div:nth-child(2) {

@@ -1,25 +1,35 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import { Container, Main, Content, Title, Text, Tags, Controls, Control } from './styles';
+
+import { BsChevronLeft } from 'react-icons/bs'
+import { BiMinus } from 'react-icons/bi'
+import { BiPlus } from 'react-icons/bi'
 
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { ButtonBack } from '../../components/ButtonBack';
 import { ButtonText } from '../../components/ButtonText';
 import { Button } from '../../components/Button';
-
-import { BsChevronLeft } from 'react-icons/bs'
-import { BiMinus } from 'react-icons/bi'
-import { BiPlus } from 'react-icons/bi'
+import { SideMenu } from '../../components/SideMenu';
+import { Tag } from '../../components/Tag';
 
 import CardImage from '../../assets/salada-ravanello.png'
-import { Tag } from '../../components/Tag';
-import { useNavigate } from 'react-router-dom'
+
 
 export function Preview(){
   const navigate = useNavigate()
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return(
     <Container>
-      <Header/>
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header onOpenMenu={() => setMenuIsOpen(true)}/>
+
       <Main>
         <ButtonBack
           icon={BsChevronLeft}

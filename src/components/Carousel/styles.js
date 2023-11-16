@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   margin: 1.875rem 0;
-  width: 100%;
+  width: 80vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -16,8 +16,6 @@ export const Container = styled.div`
 
 export const NavigationWrapper = styled.div`
   position: relative;
-  height: 100%;
-  width: 100%;
 
   .controls {
     button {

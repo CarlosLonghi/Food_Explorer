@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { FiUser, FiMail, FiLock, FiArrowLeft} from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom';
-
 import { api } from '../../services/api';
+
+import { Container, Form } from "./styles";
+
+import { FiUser, FiMail, FiLock, FiArrowLeft} from 'react-icons/fi'
 
 import { Logo } from '../../components/Logo'
 import { Label } from '../../components/Label'
@@ -10,7 +12,6 @@ import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText';
 
-import { Container, Form } from "./styles";
 
 export function SignUp() {
   const [name, setName] = useState('')

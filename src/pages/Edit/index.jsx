@@ -1,20 +1,21 @@
+import { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import M from 'materialize-css';
+
 import { Container, Main, Content, Title, Form } from './styles';
+
+import { BsChevronLeft, BsUpload } from 'react-icons/bs'
+import { MdSave, MdCancel } from 'react-icons/md'
 
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { ButtonBack } from '../../components/ButtonBack';
-
 import { Button } from '../../components/Button';
-
-import { BsChevronLeft, BsUpload } from 'react-icons/bs'
-import { MdSave, MdCancel } from 'react-icons/md'
-import { useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
-
-import M from 'materialize-css';
+import { SideMenu } from '../../components/SideMenu';
 
 
 export function Edit(){
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const textareaRef = useRef(null);
   const navigate = useNavigate();
 
@@ -32,7 +33,12 @@ export function Edit(){
 
   return(
     <Container>
-      <Header isAdmin={true}/>
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header onOpenMenu={() => setMenuIsOpen(true)}/>
+
       <Main>
         <ButtonBack
           icon={BsChevronLeft}

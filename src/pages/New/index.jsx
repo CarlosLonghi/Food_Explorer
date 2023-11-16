@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Container, Main, Content, Title, Form } from './styles';
 import M from 'materialize-css';
-
 import { api } from '../../services/api';
+
+import { Container, Main, Content, Title, Form } from './styles';
 
 import { BsChevronLeft, BsUpload } from 'react-icons/bs'
 import { MdOutlineSaveAlt } from 'react-icons/md'
@@ -13,10 +13,12 @@ import { Footer } from '../../components/Footer';
 import { ButtonBack } from '../../components/ButtonBack';
 import { Button } from '../../components/Button';
 import { Item } from '../../components/Item';
+import { SideMenu } from '../../components/SideMenu';
 
 
 export function New(){
   const navigate = useNavigate()
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const textareaRef = useRef(null)
   // const [image, setImage] = useState()
@@ -75,7 +77,12 @@ export function New(){
 
   return(
     <Container>
-      <Header isAdmin={true}/>
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header onOpenMenu={() => setMenuIsOpen(true)}/>
+
       <Main>
         <ButtonBack
           icon={BsChevronLeft}

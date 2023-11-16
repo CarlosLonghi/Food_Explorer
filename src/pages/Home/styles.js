@@ -2,16 +2,19 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
-`
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 10vw;
+  
+  display: grid;
+  grid-template-areas: 
+    'header'
+    'content'
+    'footer'
+  ;
+  grid-template-rows: auto 1fr auto;
 `
 
 export const Head = styled.div`
+  grid-area: head;
   display: flex;
   align-items: center;
   height: 16.25rem;
@@ -46,4 +49,22 @@ export const Head = styled.div`
       line-height: 0.875rem;
     }
   }
+`
+
+export const Content = styled.div`
+  grid-area: content;
+  /* display: flex;
+  flex-direction: column; */
+  padding: 0 10vw;
+  display: grid;
+  grid-template-areas: 
+    'head'
+    'carousels'
+  ;
+`
+export const CarouselWrapper = styled.div`
+  grid-area: carousels;
+
+  /* background-color: aqua;
+  height: 10rem; */
 `

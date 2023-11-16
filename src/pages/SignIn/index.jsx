@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { FiUserPlus, FiMail, FiLock } from 'react-icons/fi'
-
+import { Container, Form } from "./styles";
 import { useAuth } from '../../hooks/auth'
+
+import { FiUserPlus, FiMail, FiLock } from 'react-icons/fi'
 
 import { Logo } from '../../components/Logo'
 import { Label } from '../../components/Label'
@@ -9,7 +10,6 @@ import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText'
 
-import { Container, Form } from "./styles";
 
 export function SignIn() {
   const [email, setEmail] = useState('')

@@ -1,26 +1,39 @@
 import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakPoints'
 
 export const Container = styled.header`
+  grid-area: header;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: ${({theme}) => theme.COLORS.DARK_500};
   padding: 1.75rem 10vw;
   gap: 1.2rem;
-
-  button {
-    grid-area: button;
-    width: fit-content;
-    white-space: nowrap;
-    padding: 1.70rem 1.25rem;
-
-    &:focus {
-      background-color: ${({ theme }) => theme.COLORS.TOMATO_300};
-    }
-  }
 `
 
+export const Menu = styled.button`
+  background: none !important;
+  border: none;
+  display: none;
+
+  > svg {
+    font-size: 2.6rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    display: block;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    > svg {
+      font-size: 2.4rem;
+    }
+  }
+`;
+
 export const Brand = styled.div`
+  grid-area: brand;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -51,6 +64,7 @@ export const Brand = styled.div`
 `
 
 export const Search = styled.div`
+  grid-area: search;
   width: 100%;
   padding: 0.6rem 1rem;
   display: flex;
@@ -76,10 +90,28 @@ export const Search = styled.div`
   svg {
     color: ${({theme}) => theme.COLORS.LIGHT_400};
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    display: none;
+  }
 `
 
 export const HeaderControl = styled.div`
+  grid-area: buttons;
   display: flex;
   align-items: center;
   gap: 1.875rem;
+
+  button {
+    white-space: nowrap;
+    padding: 1.70rem 1.25rem;
+
+    &:focus {
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_300};
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    display: none;
+  }
 `
